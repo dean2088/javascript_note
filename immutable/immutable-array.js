@@ -1,5 +1,7 @@
 /**
+ *
  * array
+ *
 **/
 const list = [0, 10, 100];
 
@@ -23,73 +25,10 @@ const incrementCounter = (list, index) => {
   //es6
   return [...list.slice(0, index), list[index] + 1, ...list.slice(index + 1)];
 }
-
-/**
- * object
-**/
-const obj = {
-  id: 1,
-  text: 'text',
-  completed: true
-};
-
-const updateObject = (oldObject, newObject) => {
-  //es6
-  return Object.assign({}, oldObject, newObject);
-  //es7
-  return { ...oldObject, ...newObject }
-}
-
-/*
-* filter object with Array.prototype.reduce
-*/
-
-const state = {
-    id: 1,
-    points: 100,
-    name: "Goran"
-};
-
-const newState = {
-    ...state,
-    points: 120
-}
-
-const items = {
-  1: {
-    id: 1,
-    name: "Goran"
-  }, 
-  2: {
-    id: 2,
-    name: "Petar"
-  }
-};
-
-const filterId = 1;
-
-const filteredItems = Object.keys(items).reduce( (accumulator, key) => (
-   items[key].id === filterId ? accumulator : {
-       ...accumulator,
-       [key]: items[key]
-   }                                        
-), {});
-
-console.log(filteredItems);
-/*
-  {
-    2: {
-      id: 2,
-      name: "Petar"
-    }
-  }
-  }
-*/
-
-/*
-* reduce
-*/
-
+//short
+//arrayObject.slice(start,end), use this to copy a array
+const characters = [ 'Obi-Wan', 'Vader', 'Luke' ]
+const sortedCharacters = characters.slice().sort()
 /*
 * update array with objects using Array.prototype.slice
 */
